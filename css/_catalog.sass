@@ -66,12 +66,11 @@
                 &::-webkit-details-marker
                     display: none
 
-                &::after
-                    content: url(../img/filter.svg)
+                & svg
                     padding-left: 10px
 
-            &[open] > &_summary::after
-                content: url(../img/filter_active.svg)
+            &[open] > &_summary path
+                fill: $select_color
 
             &[open] > &_summary
                 color: $select_color

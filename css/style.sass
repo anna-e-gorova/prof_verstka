@@ -202,7 +202,9 @@ a
         position: absolute
         left: 50%
         transform: translate(-50%, 0)
-
+        &:hover
+            background: $select_color
+            color: #FFFFFF
     &__add
         border: 1px solid #FFFFFF
         top: 188px
@@ -226,10 +228,6 @@ a
 
     &__cart
         margin-right: 11px
-
-    &__bottom:hover
-        background: $select_color
-        color: #FFFFFF
 
     &__link
         display: flex
@@ -320,13 +318,16 @@ a
                 display: flex
 
                 &_input
+                    box-sizing: border-box
                     border-top-left-radius: 30px
                     border-bottom-left-radius: 30px
                     height: 49px
-                    width: 252px
-                    padding-left: 22px
+                    width: 256px
+                    padding: 0px 22px
                     border: none
                     background: #e1e1e1
+                    &:focus
+                        outline: 0
 
                 &_button
                     border-top-right-radius: 30px
@@ -337,6 +338,8 @@ a
                     background: $select_color
                     color: #FFFFFF
                     border: none
+                    &:focus
+                        outline: 0
 
                     &:hover
                         background: #E05C6E
@@ -383,3 +386,4 @@ a
                 margin: auto
 
 @import catalog
+@import product
