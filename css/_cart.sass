@@ -7,48 +7,47 @@
         flex-direction: column
         gap: 40px
 
-    &__element
-        display: flex
-        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
-        height: 308px
-        width: 648px
-        gap: 31px
-        & h3
-            font-style: normal
-            font-weight: normal
-            font-size: 24px
-            line-height: 29px
-            color: #222222
-            margin: 22px 0 42px
-            display: flex
-
-        & p
-            font-style: normal
-            font-weight: normal
-            font-size: 22px
-            line-height: 26px
-            color: #575757
-            margin-bottom: 8px
-
     &__buttom
         display: flex
         justify-content: space-between
-.color_text
-    color: $select_color
+    &__form
+        width: 360px
 
-.quantity
-    border: 1px solid #EAEAEA
-    margin-left: 24px
-    padding: 0 16px 0
-
-.removal
-    margin: 0 22px 0 126px
-    &:hover path
-        fill: $select_color
-
-.shipping-adress
+.order
     display: flex
-    flex-direction: column
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    height: 308px
+    width: 648px
+    gap: 31px
+    & h3
+        font-style: normal
+        font-weight: normal
+        font-size: 24px
+        line-height: 29px
+        color: #222222
+        margin: 22px 0 42px
+        display: flex
+
+    & p
+        font-style: normal
+        font-weight: normal
+        font-size: 22px
+        line-height: 26px
+        color: #575757
+        margin-bottom: 8px
+
+    &__quantity
+        border: 1px solid #EAEAEA
+        margin-left: 24px
+        padding: 0 16px 0
+
+    &__removal
+        margin: 0 22px 0 126px
+        & path
+            transition: $svg_trans
+        & a:hover path
+            fill: $select_color
+
 .buttom-carts
     border: 1px solid #A4A4A4
     padding: 16px 40px
@@ -57,16 +56,16 @@
     font-size: 14px
     line-height: 17px
     color: #000000
-    background: #FFFFFF
-    &:focus
-        outline: 0
-    & a
-        color: #000000
+    transition: $button_trans
+    &:hover
+        color: #FFFFFF
+        background: #A4A4A4
 
 .shipping-adress
     display: flex
+    flex-direction: column
     gap: 20px
-    margin-bottom: 57px
+    margin: 17px 0px 57px 0px
     & h3
         font-style: normal
         font-weight: 300
@@ -74,22 +73,27 @@
         line-height: 19px
         color: #222222
     & input
-        width: 360px
         height: 45px
         border: 1px solid #A4A4A4
-        padding-left: 16px
+        padding: 0 16px
         &:focus
             outline: 0
     & button
         border: 1px solid #A4A4A4
         padding: 10px 14px
-        width: 104px
-        background: #FFFFFF
+        width: 30%
+        text-align: center
         font-weight: 300
         font-size: 11px
         line-height: 13px
-        & a
-            color: #4A4A4A
+        color: #4A4A4A
+        background: #FFFFFF
+        transition: $button_trans
+        &:hover
+            color: #FFFFFF
+            background: #A4A4A4
+        &:focus
+            outline: 0
 
 .total-price
     background: #F5F3F3
@@ -110,13 +114,17 @@
         line-height: 19px
         color: #222222
         margin: 0 34px 21px
+    &__total
+        margin-left: 32px
+        &_grand
+            color: $select_color
+            font-weight: bold
     &__line
         border: 1px solid #E2E2E2
         width: 275px
         align-self: center
-    & button
+    & a
         margin: 17px 0 42px
-        width: 275px
         font-style: normal
         font-weight: 300
         font-size: 16px
@@ -125,5 +133,7 @@
         padding: 15px 42px
         align-self: center
         border: $select_color
-        & a
-            color: #FFFFFF
+        color: #FFFFFF
+        transition: $button_trans
+        &:hover
+            background: #E05C6E

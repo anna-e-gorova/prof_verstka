@@ -25,6 +25,8 @@
             background: rgba(42, 42, 42, 0.15)
             display: flex
             align-items: center
+            & path
+                transition: $svg_trans
             &:hover path
                 fill: $select_color
             & svg
@@ -98,6 +100,9 @@
         display: flex
         align-items: center
         gap: 23px
+        transition: $button_trans
+        & path
+            transition: $svg_trans
         &:hover
             background: $select_color
             color: #FFFFFF
