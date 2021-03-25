@@ -1,0 +1,204 @@
+.breadcrumbs
+    background: #F8F3F4
+    height: 148px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: 39px
+
+    &__heading
+        display: inline-block
+        font-size: 24px
+        line-height: 29px
+        color: $select_color
+        font-style: normal
+        font-weight: normal
+
+    &__nav
+        display: flex
+        list-style-type: none
+
+    &__link
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 17px
+        color: #636363
+        transition: $text-trans
+        &:hover
+            color: $select_color
+
+    &__list
+        &:not(:last-child)::after
+            content: '/'
+            margin-left: 8px
+            margin-right: 8px
+        &:last-child a
+            font-weight: bold
+            color: $select_color
+
+.catalog
+    margin-bottom: 96px
+
+    &__filter
+        display: flex
+        margin-bottom: 64px
+        position: relative
+
+        &_name
+            font-weight: 600
+            font-size: 14px
+            line-height: 17px
+            padding-top: 17px
+            padding-left: 17px
+            position: absolute
+            z-index: 1
+            &[open]
+                background: #FFFFFF
+                box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+                min-width: 360px
+                padding-bottom: 17px
+
+            & summary
+                display: block
+                &:focus
+                    outline: 0
+
+                &::-webkit-details-marker
+                    display: none
+
+                & svg
+                    padding-left: 10px
+
+            &[open] > &_summary path
+                fill: $select_color
+
+            &[open] > &_summary
+                color: $select_color
+
+            &_list
+                list-style: none
+
+                &_item
+                    padding-top: 18px
+
+                    & details
+
+                        & summary
+                            display: block
+                            border-left: 5px solid $select_color
+                            border-bottom: 1px solid #EBEBEB
+                            padding: 11px 0
+                            padding-left: 11px
+                            font-style: normal
+                            font-weight: normal
+                            font-size: 14px
+                            line-height: 17px
+                            color: #6F6E6E
+
+                            &:focus
+                                outline: 0
+
+                            &::-webkit-details-marker
+                                display: none
+
+                            &::after
+                                content: none
+
+                        & ul
+                            list-style: none
+                            padding: 24px 0px 6px 34px
+                            display: flex
+                            flex-direction: column
+                            gap: 11px
+                            & li a
+                                font-style: normal
+                                font-weight: normal
+                                font-size: 14px
+                                line-height: 17px
+                                color: #6F6E6E
+                                transition: $text-trans
+                                &:hover
+                                    color: $select_color
+
+                & li details[open] > &_summary
+                    color: $select_color
+        &_elemets
+            display: flex
+            margin-left: $width_site / 3 + 10px
+            list-style-type: none
+            font-style: normal
+            font-weight: normal
+            font-size: 14px
+            line-height: 17px
+            color: #6F6E6E
+            padding-top: 17px
+
+            & li
+                position: relative
+
+            & li:not(:first-child)
+                margin-left: 28px
+
+            & details
+                & summary
+                    display: block
+                    &:focus
+                        outline: 0
+
+                    &::-webkit-details-marker
+                        display: none
+
+                    &::after
+                        content: url(../img/marker.svg)
+                        padding-left: 10px
+
+                & form
+                    display: flex
+                    flex-direction: column
+                    position: absolute
+                    background: #FFFFFF
+                    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+                    min-width: 80px
+                    z-index: 1
+                    left: -10px
+
+                    & label
+                        margin: 10px 10px 0px
+
+                        &:last-child
+                            margin-bottom: 10px
+
+                        & input
+                            margin-right: 10px
+
+            & li details[open] > & li details summary::after
+                content: url(../img/marker.svg)
+
+.pagination
+    border: 1px solid #EBEBEB
+    margin: 0 auto
+    width: 284px
+    &__nav
+        display: flex
+        list-style-type: none
+        justify-content: space-between
+        padding: 15px
+
+        & li a
+            font-style: normal
+            font-weight: 300
+            font-size: 16px
+            line-height: 19px
+            color: #C4C4C4
+            transition: $text-trans
+            &:hover
+                color: $select_color
+
+    &__point
+        font-style: normal
+        font-weight: 300
+        font-size: 16px
+        line-height: 19px
+        color: #C4C4C4
+        margin: 0 -20px
