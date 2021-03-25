@@ -4,7 +4,7 @@ $text_color: #FBFBFB
 $width_site: 1140px
 $gap: 20px
 $time_trans: .3s
-$text-trans: color .1s
+$text-trans: color .2s
 $button_trans: background $time_trans, color $time_trans
 $svg_trans: fill $time_trans
 
@@ -324,13 +324,12 @@ a
 
 .footer
 
-    &__mid
+    &__middle
         background-image: url(../img/footer_down.jpg)
         background-repeat: no-repeat
-        height: 448px
+        min-height: 448px
         background-size: cover
-        background-position: center bottom
-    &__middle
+        background-position: -8px bottom
         display: flex
         justify-content: space-between
         height: 100%
@@ -446,6 +445,31 @@ a
                 & path
                     transition: $svg_trans
 
+@media (min-width:668px) and (max-width:1024px)
+    .footer__middle
+        background-position: -376px top
+
+@media (max-width:667px)
+    .footer__middle
+        background-position: -504px bottom
+
+@media (max-width:1024px)
+    .centr
+        padding-left: 16px
+        padding-right: 16px
+
+    .footer__middle
+        flex-direction: column
+        align-items: center
+        padding-bottom: 140px
+        &_right
+            margin-top: 48px
+            &_h3
+                padding-bottom: 22px
+        &_left
+            margin-top: 56px
+
 @import catalog
 @import product
 @import cart
+@import regestration
