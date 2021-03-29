@@ -2,6 +2,7 @@ $select_color: #F16D7F
 $content_color: #222222
 $text_color: #FBFBFB
 $width_site: 1140px
+$width_menu: 232px
 $gap: 20px
 $time_trans: .3s
 $text-trans: color .2s
@@ -58,6 +59,7 @@ $svg_trans: fill $time_trans
 
 body
     font-family: 'Lato', sans-serif
+    overflow-x: hidden
 
 a
     text-decoration: none
@@ -79,8 +81,82 @@ a
     &__search
         margin-left: 41px
 
-    &__icon:not(:last-child)
-        margin-right: 33px
+    &__icon
+        &:not(:last-child)
+            margin-right: 33px
+        &_mob
+            display: none
+
+.menu
+    background: #FFFFFF
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    padding: 16px 16px 0px 32px
+    position: absolute
+    top: 75px
+    right: 0
+    width: $width_menu
+    min-height: 100vh
+    box-sizing: border-box
+    transition: right .3s
+    z-index: 1
+    display: flex
+    flex-direction: column
+
+    & label
+        align-self: flex-end
+
+        & path
+            transition: $svg_trans
+        &:hover path
+            fill: $select_color
+
+    & ul
+        list-style-type: none
+        & a
+            transition: $text-trans
+            &:hover
+                color: #E05C6E
+
+    &__heading
+
+        font-style: normal
+        font-weight: bold
+        font-size: 14px
+        line-height: 17px
+        color: #000000
+        padding-bottom: 24px
+
+    &__catalog
+        & ul
+            display: flex
+            flex-direction: column
+            gap: 11px
+            padding: 12px 0 20px
+            & a
+                transition: $text-trans
+                &:hover
+                    color: $select_color
+
+    &__section
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 17px
+        color: $select_color
+
+    &__item
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 17px
+        margin-left: 22px
+        color: #6F6E6E
+
+#switch
+    display: none
+
+    &:checked ~ .menu
+        right: -$width_menu
 
 .promo
     background: #F1E4E6
@@ -132,6 +208,7 @@ a
         flex-direction: column
         align-items: center
         justify-content: center
+        background-size: cover
 
     &__top
         display: flex
@@ -155,6 +232,7 @@ a
         flex-direction: column
         align-items: center
         justify-content: center
+        background-size: cover
 
     &__text
         font-style: normal
@@ -173,7 +251,7 @@ a
         color: $select_color
 
 .cart
-    margin-bottom: 191px
+    margin-bottom: 192px
 
     &__box
         display: flex
@@ -445,31 +523,9 @@ a
                 & path
                     transition: $svg_trans
 
-@media (min-width:668px) and (max-width:1024px)
-    .footer__middle
-        background-position: -376px top
-
-@media (max-width:667px)
-    .footer__middle
-        background-position: -504px bottom
-
-@media (max-width:1024px)
-    .centr
-        padding-left: 16px
-        padding-right: 16px
-
-    .footer__middle
-        flex-direction: column
-        align-items: center
-        padding-bottom: 140px
-        &_right
-            margin-top: 48px
-            &_h3
-                padding-bottom: 22px
-        &_left
-            margin-top: 56px
-
 @import catalog
 @import product
 @import cart
 @import regestration
+@import m768
+@import m375
