@@ -1,4 +1,5 @@
 $select_color: #F16D7F
+$active_color: #E05C6E
 $content_color: #222222
 $text_color: #FBFBFB
 $width_site: 1140px
@@ -8,10 +9,6 @@ $time_trans: .3s
 $text-trans: color .2s
 $button_trans: background $time_trans, color $time_trans
 $svg_trans: fill $time_trans
-
-*
-    margin: 0
-    padding: 0
 
 @keyframes jello-horizontal
     0%
@@ -57,9 +54,20 @@ $svg_trans: fill $time_trans
         transform: translateX(0)
         animation-timing-function: ease-out
 
+*
+    margin: 0
+    padding: 0
+html, body
+    height: 100%
+
 body
     font-family: 'Lato', sans-serif
     overflow-x: hidden
+
+.wrapper
+    min-height: 100%
+    display: flex
+    flex-direction: column
 
 a
     text-decoration: none
@@ -70,6 +78,9 @@ a
 .centr
     padding-left: calc(50% - 570px)
     padding-right: calc(50% - 570px)
+
+.top
+    flex-grow: 1
 
 .header
     background: $content_color
@@ -86,6 +97,9 @@ a
             margin-right: 33px
         &_mob
             display: none
+
+    & a:active path
+        fill: $active_color
 
 .menu
     background: #FFFFFF
@@ -157,6 +171,9 @@ a
 
     &:checked ~ .menu
         right: -$width_menu
+
+    &:checked ~ label svg path
+        fill: #E8E8E8
 
 .promo
     background: #F1E4E6
@@ -405,12 +422,11 @@ a
     &__middle
         background-image: url(../img/footer_down.jpg)
         background-repeat: no-repeat
-        min-height: 448px
+        height: 448px
         background-size: cover
         background-position: -8px bottom
         display: flex
         justify-content: space-between
-        height: 100%
 
         &_left
             text-align: center

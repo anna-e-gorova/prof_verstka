@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="wrapper">
+    <div class="top">
     <header class="header centr">
         <div class="header__left">
             <a href="index.html"><img src="img/logo.png" alt="logo"></a>
@@ -24,7 +26,7 @@
             <input type="checkbox" id="switch" checked>
             <label class="header__icon" for="switch"><svg width="32" height="23" viewBox="0 0 32 23" fill="none"
                     xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0 23V20.31H32V23H0ZM0 12.76V10.07H32V12.76H0ZM0 2.69V0H32V2.69H0Z" fill="#E8E8E8" /></svg>
+                    <path d="M0 23V20.31H32V23H0ZM0 12.76V10.07H32V12.76H0ZM0 2.69V0H32V2.69H0Z" fill="#E05C6E" /></svg>
             </label>
             <nav class="menu">
                 <label for="switch"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,8 +98,10 @@
     <section class="breadcrumbs breadcrumb_prodoct centr">
         <h3 class="breadcrumbs__heading">SHOPPING CART</h3>
     </section>
+    </div>
     <section class="basket centr">
-        <div class="basket__carts">   
+        <div class="basket__carts">
+            <div class="basket__orders"> 
             <div class="order">
                 <img src="../prof_verstka/img/cart_3.jpg" alt="">
                 <div class="order__option">
@@ -118,12 +122,13 @@
                         <path d="M11.2453 9L17.5302 2.71516C17.8285 2.41741 17.9962 2.01336 17.9966 1.59191C17.997 1.17045 17.8299 0.76611 17.5322 0.467833C17.2344 0.169555 16.8304 0.00177586 16.4089 0.00140366C15.9875 0.00103146 15.5831 0.168097 15.2848 0.465848L9 6.75069L2.71516 0.465848C2.41688 0.167571 2.01233 0 1.5905 0C1.16868 0 0.764125 0.167571 0.465848 0.465848C0.167571 0.764125 0 1.16868 0 1.5905C0 2.01233 0.167571 2.41688 0.465848 2.71516L6.75069 9L0.465848 15.2848C0.167571 15.5831 0 15.9877 0 16.4095C0 16.8313 0.167571 17.2359 0.465848 17.5342C0.764125 17.8324 1.16868 18 1.5905 18C2.01233 18 2.41688 17.8324 2.71516 17.5342L9 11.2493L15.2848 17.5342C15.5831 17.8324 15.9877 18 16.4095 18C16.8313 18 17.2359 17.8324 17.5342 17.5342C17.8324 17.2359 18 16.8313 18 16.4095C18 15.9877 17.8324 15.5831 17.5342 15.2848L11.2453 9Z" fill="#575757"/>
                         </svg>
                     </a></span></h3>
-                    <p>Price: <span class="color-text">$300</span></p>
-                    <p>Color: Red</p>
-                    <p>Size: Xl</p>
-                    <p>Quantity:<input type="number" min="1" value="1"></p>
+                         <p>Price: <span class="color-text">$300</span></p>
+                        <p>Color: Red</p>
+                         <p>Size: Xl</p>
+                        <p>Quantity:<input type="number" min="1" value="1"></p>
+                     </div>
                 </div>
-            </div>
+            </div> 
             <div class="basket__buttom">
                 <a class="buttom-carts" href="#">CLEAR SHOPPING CART</a>
                 <a class="buttom-carts" href="#">CONTINUE SHOPPING</a>
@@ -141,7 +146,7 @@
                 <p>SUB TOTAL <span class="total-price__total total-price__total_sub">$900</span></p>
                 <h3>GRAND TOTAL<span class="total-price__total total-price__total_grand">$900</span></h3>
                 <div class="total-price__line"></div>
-                <a href="">PROCEED TO CHECKOUT</a>
+                <a href="#">PROCEED TO CHECKOUT</a>
             </div>
         </div>
     </section>
@@ -196,6 +201,7 @@
                     </a>
                 </div>
             </div>
-        </footer>
+    </footer>
+    </div>
 </body>
 </html>
