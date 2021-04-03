@@ -1,0 +1,547 @@
+$select_color: #F16D7F
+$active_color: #E05C6E
+$content_color: #222222
+$text_color: #FBFBFB
+$width_site: 1140px
+$width_menu: 232px
+$gap: 20px
+$time_trans: .3s
+$text-trans: color .2s
+$button_trans: background $time_trans, color $time_trans
+$svg_trans: fill $time_trans
+
+@keyframes jello-horizontal
+    0%
+        transform: scale3d(1,1,1)
+    30%
+        transform: scale3d(1.25,.75,1)
+    40%
+        transform: scale3d(.75,1.25,1)
+    50%
+        transform: scale3d(1.15,.85,1)
+    65%
+        transform: scale3d(.95,1.05,1)
+    75%
+        transform: scale3d(1.05,.95,1)
+    100%
+        transform: scale3d(1,1,1)
+
+@keyframes bounce-in-right
+    0%
+        transform: translateX(600px)
+        animation-timing-function: ease-in
+        opacity: 0
+    38%
+        transform: translateX(0)
+        animation-timing-function: ease-out
+        opacity: 1
+    55%
+        transform: translateX(68px)
+        animation-timing-function: ease-in
+    72%
+        transform: translateX(0)
+        animation-timing-function: ease-out
+    81%
+        transform: translateX(32px)
+        animation-timing-function: ease-in
+    90%
+        transform: translateX(0)
+        animation-timing-function: ease-out
+    95%
+        transform: translateX(8px)
+        animation-timing-function: ease-in
+    100%
+        transform: translateX(0)
+        animation-timing-function: ease-out
+
+*
+    margin: 0
+    padding: 0
+html, body
+    height: 100%
+
+body
+    font-family: 'Lato', sans-serif
+    overflow-x: hidden
+
+.wrapper
+    min-height: 100%
+    display: flex
+    flex-direction: column
+
+a
+    text-decoration: none
+
+.color-text
+    color: $select_color
+
+.centr
+    padding-left: calc(50% - 570px)
+    padding-right: calc(50% - 570px)
+
+.top
+    flex-grow: 1
+
+.header
+    background: $content_color
+    height: 75px
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+    &__search
+        margin-left: 41px
+
+    &__icon
+        &:not(:last-child)
+            margin-right: 33px
+        &_mob
+            display: none
+
+    & a:active path
+        fill: $active_color
+
+.menu
+    background: #FFFFFF
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21)
+    padding: 16px 16px 0px 32px
+    position: absolute
+    top: 75px
+    right: 0
+    width: $width_menu
+    min-height: 100vh
+    box-sizing: border-box
+    transition: right .3s
+    z-index: 1
+    display: flex
+    flex-direction: column
+
+    & label
+        align-self: flex-end
+
+        & path
+            transition: $svg_trans
+        &:hover path
+            fill: $select_color
+
+    & ul
+        list-style-type: none
+        & a
+            transition: $text-trans
+            &:hover
+                color: #E05C6E
+
+    &__heading
+
+        font-style: normal
+        font-weight: bold
+        font-size: 14px
+        line-height: 17px
+        color: #000000
+        padding-bottom: 24px
+
+    &__catalog
+        & ul
+            display: flex
+            flex-direction: column
+            gap: 11px
+            padding: 12px 0 20px
+            & a
+                transition: $text-trans
+                &:hover
+                    color: $select_color
+
+    &__section
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 17px
+        color: $select_color
+
+    &__item
+        font-style: normal
+        font-weight: normal
+        font-size: 14px
+        line-height: 17px
+        margin-left: 22px
+        color: #6F6E6E
+
+#switch
+    display: none
+
+    &:checked ~ .menu
+        right: -$width_menu
+
+    &:checked ~ label svg path
+        fill: #E8E8E8
+
+.promo
+    background: #F1E4E6
+    display: flex
+    padding-left: calc(50% - 800px)
+    padding-right: calc(50% - 800px)
+
+    &__img
+        width: 50%
+
+    &__photo
+        width: 100%
+        height: 100%
+
+    &__h1
+        font-style: normal
+        font-weight: 900
+        font-size: 48px
+        line-height: 58px
+        color: $content_color
+
+    &__h2
+        font-style: normal
+        font-weight: 400
+        font-size: 32px
+        line-height: 38px
+        color: $content_color
+
+    &__h2_select
+        color: $select_color
+
+    &__text
+        animation: bounce-in-right 1.1s both
+        padding-top: 16%
+
+    &__content
+        border-left: 12px solid $select_color
+        padding-left: 16px
+
+.sale
+    padding-top: 65px
+    padding-bottom: 96px
+
+    &__item
+        height: 260px
+        flex-grow: 1
+        background-position: center
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        background-size: cover
+
+    &__top
+        display: flex
+        gap: 30px
+
+    &__item_1
+        background-image: url(../img/women.jpg)
+
+    &__item_2
+        background-image: url(../img/men.jpg)
+
+    &__item_3
+        background-image: url(../img/child.jpg)
+
+    &__bottom
+        background-image: url(../img/accesories.jpg)
+        height: 180px
+        background-position: center
+        margin-top: 30px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        background-size: cover
+
+    &__text
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 19px
+        text-align: center
+        color: #FFFFFF
+
+    &__heading
+        font-style: normal
+        font-weight: bold
+        font-size: 24px
+        line-height: 29px
+        text-align: center
+        color: $select_color
+
+.cart
+    margin-bottom: 192px
+
+    &__box
+        display: flex
+        gap: 30px
+        flex-wrap: wrap
+        gap: 30px
+        margin-bottom: 48px
+
+    &__up
+        margin-top: 48px
+        margin-bottom: 30px
+
+    &__item
+        width: 360px
+        position: relative
+
+        &:hover .cart__add
+            display: flex
+
+        &:hover .cart__img
+            filter: brightness(0.5)
+
+    &__title
+        text-align: center
+
+        &_up
+            font-style: normal
+            font-weight: normal
+            font-size: 30px
+            line-height: 36px
+            color: $content_color
+
+        &_down
+            font-style: normal
+            font-weight: normal
+            font-size: 14px
+            line-height: 17px
+            color: #9F9F9F
+            margin-bottom: 48px
+
+    &__content
+        padding: 24px 16px 20px
+        background: #F8F8F8
+
+        &_title
+            font-style: normal
+            font-weight: 700
+            font-size: 13px
+            line-height: 16px
+            color: #000000
+            margin-top: 25px
+
+        &_text
+            font-style: normal
+            font-weight: 300
+            font-size: 14px
+            line-height: 17px
+            color: #5D5D5D
+            padding-top: 12px
+            padding-bottom: 18px
+
+        &_price
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 19px
+            color: $select_color
+            padding-bottom: 20px
+
+    &__bottom
+        border: 1px solid #FF6A6A
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 19px
+        color: #F26376
+        padding: 14px 38px
+        position: absolute
+        left: 50%
+        transform: translate(-50%, 0)
+        transition: $button_trans
+        &:hover
+            background: $select_color
+            color: #FFFFFF
+    &__add
+        border: 1px solid #FFFFFF
+        top: 188px
+        left: 111px
+        display: none
+        justify-content: center
+        align-items: center
+        width: 139px
+        height: 44px
+        font-size: 14px
+        line-height: 17px
+        color: #FFFFFF
+        position: absolute
+        transition: $button_trans
+
+        &:hover
+            background-color: #FFFFFF
+            color: #000000
+
+        &:hover .cart__cart path
+            fill: black
+
+    &__cart
+        margin-right: 11px
+        & path
+            transition: $svg_trans
+
+    &__link
+        display: flex
+    &__img
+        width: 100%
+        transition: filter .3s
+
+.benefit
+    background: $content_color
+    padding-top: 105px
+    padding-bottom: 105px
+    display: flex
+    gap: $gap
+
+    &__content
+        width: $width_site / 3 - $gap
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        &_title
+            margin-top: 19px
+            margin-bottom: 16px
+            font-style: normal
+            font-weight: normal
+            font-size: 20px
+            line-height: 24px
+            color: $text_color
+
+        &_text
+            font-style: normal
+            font-weight: 300
+            font-size: 14px
+            line-height: 17px
+            text-align: center
+            color: $text_color
+
+.footer
+
+    &__middle
+        background-image: url(../img/footer_down.jpg)
+        background-repeat: no-repeat
+        height: 448px
+        background-size: cover
+        background-position: -8px bottom
+        display: flex
+        justify-content: space-between
+
+        &_left
+            text-align: center
+            margin-top: 112px
+            max-width: 360px
+
+            &_content
+                min-height: 99px
+                text-align: center
+                margin-top: 32px
+                font-style: normal
+                font-weight: normal
+                font-size: 20px
+                line-height: 24px
+                text-align: center
+                color: #222224
+
+        &_right
+            margin-top: 150px
+
+            &_h2
+                font-style: normal
+                font-weight: bold
+                font-size: 24px
+                line-height: 167%
+                text-align: center
+                color: $content_color
+
+            &_h3
+                font-style: normal
+                font-weight: normal
+                font-size: 18px
+                line-height: 167%
+                text-align: center
+                color: $content_color
+                padding-bottom: 32px
+
+            &_form
+                display: flex
+
+                &_input
+                    box-sizing: border-box
+                    border-top-left-radius: 30px
+                    border-bottom-left-radius: 30px
+                    height: 49px
+                    width: 256px
+                    padding: 0px 22px
+                    border: none
+                    background: #e1e1e1
+                    &:focus
+                        outline: 0
+
+                &_button
+                    border-top-right-radius: 30px
+                    border-bottom-right-radius: 30px
+                    height: 49px
+                    width: 100px
+                    text-align: center
+                    background: $select_color
+                    color: #FFFFFF
+                    border: none
+                    transition: $button_trans
+                    &:focus
+                        outline: 0
+
+                    &:hover
+                        background: #E05C6E
+
+    &__down
+        background: $content_color
+        height: 79px
+        display: flex
+        justify-content: space-between
+
+        &_copy
+            font-style: normal
+            font-weight: normal
+            font-size: 16px
+            line-height: 19px
+            color: $text_color
+            margin-top: 30px
+
+        &_socials
+
+            margin-top: 24px
+            display: flex
+            gap: 7px
+
+            &_link
+                width: 32px
+                height: 32px
+                background: #FFFFFF
+                position: relative
+                transition: $button_trans
+                &:hover
+                    animation: jello-horizontal .5s both
+                    background: $select_color
+
+                &:hover .footer__down_socials_ico path
+                    fill: white
+
+            &_ico
+                position: absolute
+                top: 0
+                right: 0
+                bottom: 0
+                left: 0
+                z-index: 1
+                margin: auto
+                & path
+                    transition: $svg_trans
+
+@import catalog
+@import product
+@import cart
+@import regestration
+@import m768
+@import m375

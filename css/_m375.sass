@@ -1,0 +1,153 @@
+@media (max-width: 767px)
+    .centr
+        padding-left: calc(50% - 212px)
+        padding-right: calc(50% - 212px)
+
+    .header
+        &__icon
+            &:not(:last-child)
+                margin-right: 8px
+            &_desc
+                display: none
+            &_mob
+                display: block
+
+    .menu
+        width: 100%
+        top: 0
+        height: 100vh
+
+        &__links-menu
+            display: flex
+            justify-content: center
+            gap: 32px
+            & path
+                fill: $select_color
+
+    #switch:checked ~ .menu
+        right: -100%
+
+    .promo
+        height: 363px
+        display: flex
+        justify-content: center
+        &__text
+            padding: 148px 48px
+        &__h1
+            font-size: 38px
+            line-height: 46px
+        &__h2
+            font-size: 20px
+            line-height: 24px
+        &__img
+            display: none
+
+    .sale
+        &__top
+            flex-direction: column
+            row-gap: 32px
+        &__item
+            height: 248px
+        &__bottom
+            height: 111px
+            margin-top: 32px
+
+    .benefit
+        padding-left: 14px
+        padding-right: 14px
+
+    .cart
+        margin-bottom: 184px
+        &__bottom
+            width: 213px
+            box-sizing: border-box
+        &__item
+            width: auto
+            min-width: 360px
+
+    .footer__middle
+        background-position: -504px bottom
+
+    .regestration
+        flex-direction: column
+        align-items: center
+        gap: 40px
+        margin-top: 40px
+
+    .site__form_reg-form
+        margin-right: 0px
+
+    .breadcrumbs
+        flex-direction: column
+        justify-content: center
+        gap: 32px
+
+    .catalog
+        &__filter
+            &_name
+                padding-left: 0
+                &_summary
+                    & span
+                        display: none
+                & svg
+                    width: 37px
+                    height: 25px
+
+            &_elemets
+                margin-left: 150px
+                font-size: 12px
+                line-height: 14px
+
+    .product
+        margin-bottom: 64px
+        &_choose
+            margin-left: 0
+            font-size: 10px
+            line-height: 12px
+            margin-bottom: 64px
+
+    .cart_product
+        margin-bottom: 64px
+
+    .basket
+        margin: 39px 0 96px
+        &__buttom
+            gap: 8px
+            margin: 30px 0 48px
+        &__form
+            flex-direction: column
+            margin-top: 48px
+
+    .order
+        width: 358px
+        height: 188px
+        gap: 18px
+        & h3
+            font-size: 16px
+            line-height: 19px
+            margin: 13px 56px 24px 0
+            width: 196px
+        &__removal
+            margin: 0 22px 0 31px
+            & svg
+                width: 8px
+                height: 12px
+        & p
+            font-size: 14px
+            line-height: 17px
+            margin-bottom: 4px
+        & input
+            width: 24px
+            height: 16px
+            font-size: 10px
+            line-height: 12px
+
+    .buttom-carts
+        font-size: 12px
+        line-height: 14px
+        padding: 8px 19px
+
+@media ( max-width: 425px )
+    .centr
+        padding-left: 8px
+        padding-right: 8px

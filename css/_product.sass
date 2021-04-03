@@ -1,0 +1,112 @@
+.breadcrumb_prodoct
+    margin: 0
+
+.product
+    margin-bottom: 128px
+
+    &_img
+        display: flex
+        position: relative
+        align-items: center
+        width: 100%
+        height: 777px
+        background: #F7F7F7
+        & img
+            width: 100%
+
+    &_carusel
+        display: flex
+        position: absolute
+        width: 100%
+        justify-content: space-between
+        & a
+            width: 47px
+            height: 47px
+            background: rgba(42, 42, 42, 0.15)
+            display: flex
+            align-items: center
+            & path
+                transition: $svg_trans
+            &:hover path
+                fill: $select_color
+            & svg
+                margin: 0 auto
+
+    &_content
+        max-width: $width_site
+        margin: 0 auto
+        display: flex
+        flex-direction: column
+        align-items: center
+        position: relative
+        background: #FFFFFF
+        margin-top: -64px
+        border: 1px solid #EAEAEA
+        & h4
+            color: $select_color
+            font-style: normal
+            font-weight: 300
+            font-size: 14px
+            line-height: 17px
+            padding: 64px 0px 12px
+
+        &_line
+            height: 3px
+            width: 63px
+            background: $select_color
+
+        & h3
+            padding: 12px 0 48px
+            font-style: normal
+            font-weight: 300
+            font-size: 18px
+            line-height: 22px
+            color: #4D4D4D
+        &_text
+            padding-bottom: 32px
+            font-style: normal
+            font-weight: 300
+            font-size: 14px
+            line-height: 17px
+            text-align: center
+            color: #5E5E5E
+            max-width: 552px
+
+        &_price
+            font-style: normal
+            font-weight: 300
+            font-size: 24px
+            line-height: 29px
+            color: #EF5B70
+            padding: 0px 293px
+            padding-bottom: 64px
+            margin-bottom: 64px
+            border-bottom: 1px solid #EAEAEA
+
+    &_choose
+        margin: 0
+        padding: 0
+        margin-bottom: 48px
+
+    &_bottom
+        border: 1px solid #FF6A6A
+        font-style: normal
+        font-weight: normal
+        font-size: 16px
+        line-height: 19px
+        color: #F26376
+        padding: 14px 38px
+        margin-bottom: 64px
+        display: flex
+        align-items: center
+        gap: 23px
+        transition: $button_trans
+        & path
+            transition: $svg_trans
+        &:hover
+            background: $select_color
+            color: #FFFFFF
+            & path
+                fill: #FFFFFF
+.cart_product
+    margin-bottom: 128px
